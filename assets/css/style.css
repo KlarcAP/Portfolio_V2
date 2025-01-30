@@ -139,11 +139,18 @@ input, textarea {
 
 html { font-family: var(--ff-poppins);  }
 
-body { background-image: url(../images/background-body.jpg); }
+body { 
+  background-image: url(../images/background-body.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; /* Ou use "contain" se for mais adequado */
+  background-attachment: fixed; /* Para manter a imagem fixa */ 
+}
 
 body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 .sidebar,
@@ -1214,7 +1221,7 @@ textarea.form-input::-webkit-resizer { display: none; }
  * responsive larger than 450px screen
  */
 
-@media (min-width: 450px) {
+@media (min-width: 465px) {
 
   /**
    * client
@@ -1222,7 +1229,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .clients-item { min-width: calc(33.33% - 10px); }
 
-
+  .avatar-box img {
+    width: 60px;
+    border-radius: 20px;
+   }
 
   /**
    * #PORTFOLIO, BLOG 
@@ -1321,7 +1331,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .avatar-box { border-radius: 30px; }
 
   .avatar-box img { 
-    width: 120px; 
+    width: 100px; 
     border-radius: 30px;
   }
 
@@ -1548,6 +1558,10 @@ textarea.form-input::-webkit-resizer { display: none; }
   /**
    * SIDEBAR
    */
+
+   .avatar-box img {
+    width: 60px;
+   }
 
   .contacts-list {
     grid-template-columns: 1fr 1fr;
